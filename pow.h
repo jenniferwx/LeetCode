@@ -14,6 +14,8 @@
 class Solution {
 public:
     double pow(double x, int n) {
+        if (x < 0)
+            return (n % 2 == 0) ? pow(-x, n) : -pow(-x, n);  
         if (x == 1)
             return x;
         if (n < 0)
@@ -22,8 +24,6 @@ public:
             return 1.0;
         if (n == 1)
             return x;
-        if (x < 0)
-            return (n % 2 == 0) ? pow(-x, n) : -pow(-x, n);     
         double half = pow(x, n / 2);
         if (n % 2 == 0)
             return half * half;
