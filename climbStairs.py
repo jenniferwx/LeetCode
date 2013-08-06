@@ -9,14 +9,18 @@ Each time you can either climb 1 or 2 steps. In how many distinct ways can you c
 Solution: Clime one step from last stair or clime 2 steps from the last last stair.
 """
 
-import numpy as np
+#import numpy as np
 
 def climbStairs(num):
     last=1
     lastlast=1
-    for i in range(2,num):
+    for i in range(2,num+1):
        step = last+lastlast
        lastlast=last
-       last = step
-       
+       last = step     
     return last   
+    
+
+if __name__=='__main__':
+    num=5
+    print climbStairs(num)
