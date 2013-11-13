@@ -1,3 +1,16 @@
+/*
+Sort a linked list using insertion sort.
+Written by Xi Wang
+11/13/2013
+*/
+
+/* Definition for singly-linked list.
+ * struct ListNode {
+ *     int val;
+ *     ListNode *next;
+ *     ListNode(int x) : val(x), next(NULL) {}
+ * };
+ */
 class Solution {
 public:
     ListNode *insertionSortList(ListNode *head) {
