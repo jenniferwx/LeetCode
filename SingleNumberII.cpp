@@ -9,7 +9,7 @@ public:
         // IMPORTANT: Please reset any member data you declared, as
         // the same Solution instance will be reused for each test case.
      //solution 1: use extrac space
- /*    map<int,int> mymap;
+     map<int,int> mymap;
      for(int i=0;i<n;i++)
      {
          mymap[A[i]]++;
@@ -20,8 +20,10 @@ public:
      {
          if(iter->second==1)
          return iter->first;
-     }*/
-     
+     }
+    }
+    
+     int singleNumber_2(int A[], int n) {
      //solution2: no extra memory
      int ones = 0,twos=0,threes =0;
      for(int i=0;i<n;i++)
