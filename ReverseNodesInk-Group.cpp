@@ -33,7 +33,7 @@ public:
     ListNode *reverseKGroup(ListNode *head, int k) {
         // IMPORTANT: Please reset any member data you declared, as
         // the same Solution instance will be reused for each test case.
-                if(!head)
+        if(!head)
         return NULL;
         ListNode *phead = new ListNode(0);
         phead->next = head;
@@ -67,7 +67,7 @@ public:
             ListNode *t1 = phead->next;
             phead->next = begin;
             phead = t1;
-			head = curr;
+            head = curr;
         }
         return pphead->next;
     }
