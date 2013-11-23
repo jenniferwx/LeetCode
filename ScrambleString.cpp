@@ -75,7 +75,7 @@ public:
         for(int i=0;i<s2.length();i++) check[s2[i]]--;
         for(int i=0;i<256;i++)
         {
-            if(check[i]!=0) // check[i]>0 will be super slow, will cause time limit exceed
+            if(check[i]!=0) // check[i]>0 will be an error
             return false;
         }
         return true;
