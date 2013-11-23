@@ -75,42 +75,10 @@ public:
         for(int i=0;i<s2.length();i++) check[s2[i]]--;
         for(int i=0;i<256;i++)
         {
-            if(check[i]>0)
+            if(check[i]!=0) // check[i]>0 will be super slow, will cause time limit exceed
             return false;
         }
         return true;
     }
     
-    // SOlution mordified:
-    class Solution {
-    public:
-    bool isScramble(string s1, string s2) {
-        if(s1.size() != s2.size()) return false;   
-            int A[26];   
-            memset(A,0,26*sizeof(A[0]));   
-            for(int i =0;i<s1.size(); i++)   
-            {   
-                 A[s1[i]-'a']++;   
-            }   
-        for(int i =0;i<s2.size(); i++)   
-            {   
-                 A[s2[i]-'a']--;   
-            }   
-            for(int i =0;i<26; i++)   
-            {   
-                 if(A[i] !=0)   
-                 return false;   
-        }   
-            if(s1.size() ==1 && s2.size() ==1) return true;   
-            for(int i =1; i< s1.size(); i++)   
-            {   
-                 bool result= isScramble(s1.substr(0, i), s2.substr(0, i))   
-                      && isScramble(s1.substr(i, s1.size()-i), s2.substr(i, s1.size()-i));   
-                 result = result || (isScramble(s1.substr(0, i), s2.substr(s2.size() - i, s2.size()))   
-                      && isScramble(s1.substr(i, s1.size()-i), s2.substr(0, s1.size()-i)));   
-                 if(result) return true;   
-            }   
-            return false;
-    }
-};
 };
