@@ -25,7 +25,7 @@ public:
         {
         	map<double,set<int>> mymap;
 		int duplicates = 0;
-		for(int j = ; j < size; j++)
+		for(int j = 0; j < size; j++)
 		{
 		  if(points[i].x==points[j].x && points[i].y == points[j].y && i!=j)
 		{
