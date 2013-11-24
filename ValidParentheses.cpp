@@ -20,7 +20,7 @@ public:
             mystack.push(s[i]);
             else
             {
-                if(mystack.empty())
+                if(mystack.empty()) //need to check first
                 return false;
                 char top = mystack.top();
                 mystack.pop();
