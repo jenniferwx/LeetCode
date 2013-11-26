@@ -29,11 +29,10 @@ public:
         return 0;
         int minLeft = DFS(root->left);
         int minRight = DFS(root->right);
-        if(minLeft==0 && minRight==0)
-        return 1;
+
         if(minLeft==0)
         return minRight+1;
-        if(minRight==0)
+        else if(minRight==0)
         return minLeft+1;
         else
         return min(minLeft+1, minRight+1);
