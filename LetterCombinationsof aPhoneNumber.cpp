@@ -17,6 +17,7 @@ public:
         res.clear();
         string s;
         letterCombinationsRe(digits, mapping, s);
+        letterCombinationsRe2(digits, mapping, s,0)
         return res;
     }
     void letterCombinationsRe(string digits, string mapping[],string s)
@@ -31,6 +32,23 @@ public:
         {
             s.push_back(letters[i]);
             letterCombinationsRe(digits, mapping, s);
+            s.pop_back();
+        }
+    }
+    // second way to write recursive function
+    void letterCombinationsRe2(string digits, string mapping[],string s,int start)
+    {
+        if(s.size() == digits.size())
+        {
+            res.push_back(s);
+            return;
+        }
+        
+        string letters = mapping[digits[start]-'2'];
+        for(int i=0;i<letters.size();i++)
+        {
+            s.push_back(letters[i]);
+            letterCombinationsRe(digits, mapping, s,start+1);
             s.pop_back();
         }
     }
