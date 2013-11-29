@@ -36,11 +36,11 @@ public:
         for(int i=0;i<len;i++)
         {
             string str = tokens[i];
-			if(str.compare("+")!=0&& str.compare("*")!=0 &&str.compare("/")!=0 &&str.compare("-")!=0)
+	    if(str.compare("+")!=0&& str.compare("*")!=0 &&str.compare("/")!=0 &&str.compare("-")!=0)
             result.push(str2int(str));
             else
             {
-			        	if(str.compare("+")==0) // pay attention to str.compare()
+		if(str.compare("+")==0) // pay attention to str.compare()
                 {
                     int res = 0;
                     for(int j=0;j<2;j++)
@@ -62,7 +62,7 @@ public:
                     result.push(num2-num1);
                 }
                 
-				        else if(str.compare("*")==0)
+		else if(str.compare("*")==0)
                 {
                     int res = 1;
                     for(int j=0;j<2;j++)
