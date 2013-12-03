@@ -27,4 +27,25 @@ public:
         }
         return max(maxLen,len-end);
     }
+    
+    // soluiton 2
+     int lengthOfLongestSubstring_2(string s)
+    {
+        vector<bool> exist(256,false);
+        int maxLen = 0;
+        int end = 0, start = 0;
+        while(end<s.size())
+        {
+            if(!exist[s[end]])
+            {
+                exist[s[end++]] = true;
+                maxLen = max(maxLen,end-start);
+            }
+            else
+              exist[s[start++]] = false;
+        }
+        return maxLen;
+        
+    }
+    }
 };
