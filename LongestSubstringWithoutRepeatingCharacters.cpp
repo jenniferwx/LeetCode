@@ -18,11 +18,11 @@ public:
         for(int i=0;i<len;i++)
         {
             char ch = s[i];
-      		if(end <= mymap[ch]) // Notice: here should be "<=" not "<"
-      		{
-      		    maxLen = max(maxLen, i-end);
-      		    end = mymap[ch] + 1;
-      		}
+            if(end <= mymap[ch]) // Notice: here should be "<=" not "<"
+            {
+                maxLen = max(maxLen, i-end);
+                end = mymap[ch] + 1;
+            }
             mymap[ch] = i;
         }
         return max(maxLen,len-end);
