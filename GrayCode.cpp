@@ -1,4 +1,4 @@
-?*
+/*
 The gray code is a binary numeral system where two successive values differ in only one bit.
 
 Given a non-negative integer n representing the total number of bits in the code, print the sequence 
@@ -18,12 +18,33 @@ For example, [0,2,3,1] is also a valid gray code sequence according to the above
 
 For now, the judge is able to judge based on one instance of gray code sequence. Sorry about that.
 */
- Solution {
+
+
+Solution {
 public:
     vector<int> grayCode(int n) {
         vector<int> result(1<<n,0);
         for(int i=0;i<1<<n;i++)
            result[i] = (i >> 1) ^ i;
         return result;
+    }
+    
+     vector<int> grayCode_2(int n)
+    {
+        vector<int> result;
+        result.push_back(0);
+        int carry = 1;
+        for(int i=1;i<=n;i++)
+        {
+            int len = result.size();
+            for(int j=len-1;j>=0;j--)
+            {
+                int num = result[j]^carry;
+                result.push_back(num);
+            }
+            carry<<=1;
+        }
+        return result;
+    }
     }
 };
