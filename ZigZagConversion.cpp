@@ -53,4 +53,26 @@ public:
            
        return result;
     }
+    
+    // Solution2
+    string convert(string s, int nRows) {
+        if (nRows == 1) return s;
+        string res;
+        int inc = (nRows - 1) * 2, N = s.size();
+        for (int i = 0; i < nRows; ++i)
+        {
+            int j = 0;
+            while (true)
+            {
+                if (i > 0 && i < nRows-1 && j-i >= 0 && j-i < N)
+                    res.push_back(s[j-i]);
+                if (j+i < N)
+                    res.push_back(s[j+i]);
+                if (j+i >= N)
+                    break;
+                j += inc;
+            }
+        }
+        return res;
+    }
 };
