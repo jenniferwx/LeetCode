@@ -43,4 +43,35 @@ public:
             curr.pop_back();
         }
     }
+    
+    // Second Solution
+    vector<vector<int>> GetNext(int n,vector<vector<int>> &cur)
+    {
+        vector<vector<int>> result;
+        for(int i=0;i<cur.size();i++)
+        {
+            for(int j=cur[i].back()+1;j<=n;j++)
+            {
+                result.push_back(cur[i]);
+                result.back().push_back(j);
+            }
+        }
+        return result;
+        
+    }
+    vector<vector<int> > combine(int n, int k) {
+        // Start typing your C/C++ solution below
+        // DO NOT write int main() function
+        vector<vector<int>> result;
+        for(int i=1;i<=n;i++)
+        {
+            result.push_back(vector<int>());
+            result.back().push_back(i);
+        }
+        for(int i=1;i<k;i++)
+        result = GetNext(n,result);
+        
+        return result;
+        
+    }
 };
