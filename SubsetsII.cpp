@@ -47,7 +47,7 @@ public:
         }
     }
     
-    // Second Solution: iterative method
+    // Second Solution: iterative method, less complexity
       vector<vector<int> > subsetsWithDup2(vector<int> &S) {
         vector<vector<int>> result;
         vector<vector<int>> save;
