@@ -42,4 +42,32 @@ public:
         }
         return result;
     }
+    // Recursive method:
+    vector<vector<int> > subsets_2(vector<int> &S) {
+        // IMPORTANT: Please reset any member data you declared, as
+        // the same Solution instance will be reused for each test case.
+        int len = S.size();
+        vector<vector<int>> result(1,vector<int>());
+        sort(S.begin(),S.end());
+        vector<int> set;
+        for(int i=1;i<=len;i++)
+        subsetsRe(S,0,i,result,set);
+        return result;
+    }
+    void subsetsRe(vector<int> &S, int start, int len, vector<vector<int>> &result, vector<int> &current)
+    {
+        int N = current.size();
+        int M = S.size();
+        if(N==len)
+        {
+            result.push_back(current);
+            return;
+        }
+        for(int i=start;i<=M-(len-N);i++)
+        {
+            current.push_back(S[i]);
+            subsetsRe(S,i+1,len,result,current);
+            current.pop_back();
+        }
+    }
 };
