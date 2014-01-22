@@ -22,7 +22,7 @@ public:
         vector<int>::iterator it = find(inorder, inorder+N, *(postorder+N-1));
         int len = it-inorder;
         root->left = construct(inorder,postorder,len);
-        root->right = construct(inorder+len+1,postorder+len,N-len-1); should be "postorder+len" not "postorder+len+1"
+        root->right = construct(inorder+len+1,postorder+len,N-len-1); //should be "postorder+len" not "postorder+len+1"
         return root;
     }
     
