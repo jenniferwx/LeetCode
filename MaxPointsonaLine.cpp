@@ -18,6 +18,7 @@ public:
         // the same Solution instance will be reused for each test case.
         //Solution1:
         int size = points.size();
+        static double epsilon = 0.0001;
         if(size<=2)
         return size;
         int maxPoints = 0;
@@ -36,9 +37,9 @@ public:
 		double diffy = points[i].y-points[j].y;
 		double diffx = points[i].x-points[j].x;
 		double slope;
-		if(diffx==0)
+		if(diffx<epsilon)
 	          slope = PI/2;
-		else if(diffy==0)
+		else if(diffy<epsilon)
 		  slope = 0;
 		else
 		  slope = atan(diffy/diffx);
